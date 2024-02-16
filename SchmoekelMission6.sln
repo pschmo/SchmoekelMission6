@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchmoekelMission6", "SchmoekelMission6\SchmoekelMission6.csproj", "{F7ACA254-8D66-42F5-B755-BCDCAD8259CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7ACA254-8D66-42F5-B755-BCDCAD8259CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7ACA254-8D66-42F5-B755-BCDCAD8259CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7ACA254-8D66-42F5-B755-BCDCAD8259CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7ACA254-8D66-42F5-B755-BCDCAD8259CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {478E81C3-5606-4D68-B496-A9A5596899B2}
+	EndGlobalSection
+EndGlobal

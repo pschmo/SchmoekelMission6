@@ -1,0 +1,45 @@
+﻿@model SchmoekelMission6.Models.Submission
+
+<form asp-action="AddMovie" asp-controller="Movie" method="post">
+    <label asp-for="Title">Title:</label>
+    <input type="text" asp-for="Title" required>
+
+    <br>
+
+    <label asp-for="Genre">Genre:</label>
+    <input type="text" asp-for="Genre" required>
+
+    <br>
+
+    <label asp-for="Director">Director:</label>
+    <input type="text" asp-for="Director" required>
+
+    <br>
+
+    <label asp-for="ReleaseYear">Release Year:</label>
+    <input type="text" asp-for="ReleaseYear" required>
+
+    <br>
+
+    <label asp-for="Rating">Rating:</label>
+    <select asp-for="Rating" asp-items="Html.GetEnumSelectList<SchmoekelMission6.Models.MovieRatingEnum>()" required></select>
+
+    <br>
+
+    <label asp-for="Edited">Edited:</label>
+    <select asp-for="Edited" asp-items="Html.GetEnumSelectList<SchmoekelMission6.Models.EditedEnum>()" required></select>
+
+    <br>
+
+    <label asp-for="LentTo">Lent To:</label>
+    <input type="text" asp-for="LentTo">
+
+    <br>
+
+    <label asp-for="Notes">Notes:</label>
+    <input type="text" asp-for="Notes" maxlength="25">
+
+    <br>
+
+    <button type="submit">Add Movie</button>
+</form>
