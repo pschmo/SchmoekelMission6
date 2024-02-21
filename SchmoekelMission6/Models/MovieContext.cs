@@ -8,6 +8,6 @@ public class MovieContext : DbContext
     {
     }
 
-    public DbSet<Submission> Movies { get; set; }
+    public DbSet<Submission> Submission { get; set; }
 }
 
