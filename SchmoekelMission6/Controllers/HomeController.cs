@@ -20,9 +20,11 @@ namespace SchmoekelMission6.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public IActionResult Movies()
         {
-            return View();
+            return View("Movies");
         }
 
 
@@ -32,7 +34,7 @@ namespace SchmoekelMission6.Controllers
             _context.Submission.Add(response);
             _context.SaveChanges();
 
-            return View("Submission");
+            return View("Submission", response);
         }
 
     }

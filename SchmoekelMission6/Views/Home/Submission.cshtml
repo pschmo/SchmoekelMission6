@@ -3,16 +3,16 @@
 *@
 @{
 }
+@model Submission
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Submission Successful</title>
-    <!-- Add any additional meta tags, styles, or scripts as needed -->
+    <!-- Head content... -->
 </head>
 <body>
     <div style="text-align: center; margin-top: 50px;">
         <h2>Submission Successful</h2>
-        <p>Thank you for submitting the movie details. Your submission was successful!</p>
+        <p>Thank you for adding <strong>@Model.Title</strong>,and for submitting the movie details. Your submission was successful!</p>
 
         <!-- You can add more content or links here as needed -->
 
@@ -20,3 +20,4 @@
     </div>
 </body>
 </html>
+
