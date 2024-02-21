@@ -25,10 +25,6 @@ namespace SchmoekelMission6.Controllers
             return View();
         }
 
-        public IActionResult Submission()
-        {
-            return View();
-        }
 
         [HttpPost]
         public IActionResult Movies(Submission response) 
@@ -36,7 +32,7 @@ namespace SchmoekelMission6.Controllers
             _context.Submission.Add(response);
             _context.SaveChanges();
 
-            return View();
+            return View("Submission");
         }
 
     }

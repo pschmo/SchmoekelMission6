@@ -54,7 +54,7 @@ namespace SchmoekelMission6.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Submission");
                 });
 #pragma warning restore 612, 618
         }

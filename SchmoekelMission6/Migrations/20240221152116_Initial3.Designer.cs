@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SchmoekelMission6.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20240216221257_Initial")]
-    partial class Initial
+    [Migration("20240221152116_Initial3")]
+    partial class Initial3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,7 +57,7 @@ namespace SchmoekelMission6.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Submission");
                 });
 #pragma warning restore 612, 618
         }
