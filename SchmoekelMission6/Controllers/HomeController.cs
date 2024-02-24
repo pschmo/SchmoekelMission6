@@ -24,17 +24,55 @@ namespace SchmoekelMission6.Controllers
         [HttpGet]
         public IActionResult Movies()
         {
+            ViewBag.Categories = _context.Categories.ToList();
+
             return View("Movies");
         }
 
 
         [HttpPost]
-        public IActionResult Movies(Submission response) 
+        public IActionResult Movies(Movie response) 
         {
-            _context.Submission.Add(response);
+            _context.Movies.Add(response);
             _context.SaveChanges();
 
-            return View("Submission", response);
+            return View("Movie", response);
+        }
+
+        public IActionResult TableView()
+        {
+            // Retrieve movies from the database
+            var movies = _context.Movies.ToList();
+
+            // Pass the movies to the view
+            return View(movies);
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var recordToEdit = _context.Movies
+                .Single(x => x.MovieId == id);
+            ViewBag.Categories = _context.Categories.ToList();
+
+            return View("Movies", recordToEdit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Movie updatedInfo) 
+        {
+            _context.Update(updatedInfo);
+            _context.SaveChanges();
+            return RedirectToAction("TableView");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Movie movie) 
+        { 
+             _context.Movies.Remove(movie);
+            _context.SaveChanges();
+
+            return RedirectToAction("TableView");
+
         }
 
     }
