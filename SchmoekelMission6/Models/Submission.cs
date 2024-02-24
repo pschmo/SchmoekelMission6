@@ -1,26 +1,23 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SchmoekelMission6.Models
 {
-    public class Movie
+    public class Submission
     {
         [Key]
-        public int MovieId { get; set; }
-
-        [Required]
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Title { get; set; }
 
-        [Required]
-        public int Year { get; set; }
+       
+        public string Genre { get; set; }
 
         [Required]
         public string Director { get; set; }
+
+        [Required]
+        public string ReleaseYear { get; set; }
 
         [Required]
         public MovieRatingEnum Rating { get; set; }
@@ -31,11 +28,8 @@ namespace SchmoekelMission6.Models
         public string LentTo { get; set; }
 
         [MaxLength(25)]
-        public string CopiedToPlex { get; set; }
-
-        public string Notes { get; set; }  // Added Notes property
+        public string Notes { get; set; }
     }
-
 
     public enum MovieRatingEnum
     {

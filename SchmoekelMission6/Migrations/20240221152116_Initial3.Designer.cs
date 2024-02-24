@@ -3,15 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SchmoekelMission6.Models;
 
 #nullable disable
 
 namespace SchmoekelMission6.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20240224022034_Initial")]
-    partial class Initial
+    [Migration("20240221152116_Initial3")]
+    partial class Initial3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,34 +18,11 @@ namespace SchmoekelMission6.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
 
-            modelBuilder.Entity("Category", b =>
+            modelBuilder.Entity("SchmoekelMission6.Models.Submission", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("SchmoekelMission6.Models.Movie", b =>
-                {
-                    b.Property<int>("MovieId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CopiedToPlex")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -55,27 +31,33 @@ namespace SchmoekelMission6.Migrations
                     b.Property<int>("Edited")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LentTo")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Notes")
                         .IsRequired()
+                        .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Rating")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ReleaseYear")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Year")
-                        .HasColumnType("INTEGER");
+                    b.HasKey("Id");
 
-                    b.HasKey("MovieId");
-
-                    b.ToTable("Movies");
+                    b.ToTable("Submission");
                 });
 #pragma warning restore 612, 618
         }

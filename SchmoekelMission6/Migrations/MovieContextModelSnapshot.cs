@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SchmoekelMission6.Models;
 
 #nullable disable
 
@@ -16,46 +15,11 @@ namespace SchmoekelMission6.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
 
-            modelBuilder.Entity("SchmoekelMission6.Models.Category", b =>
+            modelBuilder.Entity("SchmoekelMission6.Models.Submission", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 1,
-                            CategoryName = "Action"
-                        },
-                        new
-                        {
-                            CategoryId = 2,
-                            CategoryName = "Drama"
-                        });
-                });
-
-            modelBuilder.Entity("SchmoekelMission6.Models.Movie", b =>
-                {
-                    b.Property<int>("MovieId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CopiedToPlex")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -64,55 +28,33 @@ namespace SchmoekelMission6.Migrations
                     b.Property<int>("Edited")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LentTo")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Notes")
                         .IsRequired()
+                        .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Rating")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ReleaseYear")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Year")
-                        .HasColumnType("INTEGER");
+                    b.HasKey("Id");
 
-                    b.HasKey("MovieId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Movies");
-
-                    b.HasData(
-                        new
-                        {
-                            MovieId = 1,
-                            CategoryId = 1,
-                            CopiedToPlex = "Yes",
-                            Director = "Lana Wachowski, Lilly Wachowski",
-                            Edited = 1,
-                            LentTo = "Olivia",
-                            Notes = "Classic Sci-Fi",
-                            Rating = 3,
-                            Title = "The Matrix",
-                            Year = 1999
-                        });
-                });
-
-            modelBuilder.Entity("SchmoekelMission6.Models.Movie", b =>
-                {
-                    b.HasOne("SchmoekelMission6.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
+                    b.ToTable("Submission");
                 });
 #pragma warning restore 612, 618
         }
